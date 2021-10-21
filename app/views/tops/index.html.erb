@@ -1,29 +1,20 @@
 <p id="notice"><%= notice %></p>
+<header>
+<h1>ペアプロ課題　チーム１</h1>
+</header>
+<h1 class="masthead-heading text-uppercase mb-0">Tops</h1>
 
-<h1>Tops</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tops.each do |top| %>
-      <tr>
-        <td><%= top.title %></td>
-        <td><%= top.comment %></td>
-        <td><%= link_to 'Show', top %></td>
-        <td><%= link_to 'Edit', edit_top_path(top) %></td>
-        <td><%= link_to 'Destroy', top, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="form-check-input:checked row justify-content-center">
+<% @tops.each do |top| %>
+  <div class="col-md-6 col-lg-4 mb-5 container">
+    <p class="lead"><%= top.title %></p>
+    <p><%= top.comment %></p>
+    <p><%= link_to 'Show', top %></p>
+    <p><%= link_to 'Edit', edit_top_path(top) %></p>
+    <p><%= link_to 'Destroy', top, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+<% end %>
+</div>
 <br>
 
 <%= link_to 'New Top', new_top_path %>
